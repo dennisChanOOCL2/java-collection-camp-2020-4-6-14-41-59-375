@@ -2,6 +2,7 @@ package com.thoughtworks.collection;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -21,7 +22,12 @@ public class Add {
     }
 
     public List<Integer> getTripleOfOddAndAddTwo(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        List<Integer> result;
+
+        result = arrayList.stream().map(element -> (element % 2 != 0? element * 3 + 2 : element))
+                .collect(Collectors.toList());
+
+        return result;
     }
 
     public int getSumTripleAndAddTwo(List<Integer> arrayList) {
