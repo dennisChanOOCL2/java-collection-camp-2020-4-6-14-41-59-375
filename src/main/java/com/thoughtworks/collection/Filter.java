@@ -36,7 +36,10 @@ public class Filter {
     }
 
     public List<Integer> getCommonElements(List<Integer> firstList, List<Integer> secondList) {
-        throw new NotImplementedException();
+        List<Integer> result = firstList.stream()
+                .filter(element -> secondList.contains(element))
+                .collect(Collectors.toList());
+        return result;
     }
 
     public List<Integer> getDifferentElements() {
