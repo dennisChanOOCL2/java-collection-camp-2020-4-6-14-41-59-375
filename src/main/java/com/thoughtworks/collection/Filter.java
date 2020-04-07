@@ -4,6 +4,7 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Filter {
 
@@ -13,8 +14,15 @@ public class Filter {
      this.array = array;
     }
 
+    //        Integer[] array = new Integer[]{1, 2, 3, 4, 5};
     public List<Integer> filterEven() {
-        throw new NotImplementedException();
+
+        List<Integer> result = array.stream()
+                .filter(element -> element % 2 == 0)
+                .collect(Collectors.toList());
+
+        return result;
+
     }
 
     public List<Integer> filterMultipleOfThree() {
