@@ -9,7 +9,14 @@ import java.util.stream.IntStream;
 
 public class Add {
     public int getSumOfProcessedOdds(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        //求數組中奇數元素的3倍加5的和
+
+        int result = 0;
+        result = arrayList.stream().mapToInt(
+                element -> (element % 2 != 0? element*3+5 : 0)
+        ).sum();
+        return result;
+
     }
 
     public List<Integer> sortByEvenAndOdd(List<Integer> arrayList) {
